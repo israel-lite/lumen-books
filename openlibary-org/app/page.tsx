@@ -1,17 +1,18 @@
-import Image from 'next/image'
+import React from 'react';
+import Navbar from '@/components/Navbar';
+import Main from '@/components/Main';
+import SectionOne from '@/components/SectionOne';
+import SectionTwo from '@/components/SectionTwo';
+import Footer from '@/components/Footer';
 
-export default function Header() {
+export default function LandingPage() {
   return (
-    <>
-    <header className="flex items-center justify-between p-4 bg-[#1c1a1a] text-white">
-        <div className="flex items-center  gap-2 ml-[100px]">
-            <Image src="/images/lib-logo.svg" alt="Open Library Logo" width={152} height={152} />
-        </div>
-        <div className="flex justify-end gap-[10px]">
-            <span className="hover:cursor-pointer"> Donate❤️</span>
-            <span className="hover:cursor-pointer mr-[80px]">English (En) ▼</span>
-        </div>
-    </header>
-    </>
-  )
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-amber-500 selection:text-white antialiased">
+      <Navbar />
+      <Main />
+      <SectionOne />
+      <SectionTwo />
+      <Footer />
+    </div>
+  );
 }
