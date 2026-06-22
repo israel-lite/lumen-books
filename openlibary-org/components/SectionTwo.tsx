@@ -16,7 +16,7 @@ const popularBooksData = [
     genre: 'Fiction',
     title: 'The Little Prince of Flowers',
     author: 'Daniel Chidiac',
-    price: '$15.00',
+    price: '$15.99',
     image: '/images/In-place-of-fflowers.png'
   },
   {
@@ -32,7 +32,7 @@ const popularBooksData = [
     genre: 'Dark Fantasy',
     title: 'The Spirit of Yawa',
     author: 'Seyi Kekere-Ekun',
-    price: '$18.00',
+    price: '$18.75',
     image: '/images/the-spirit-of-danfo.png'
   },
   {
@@ -40,7 +40,7 @@ const popularBooksData = [
     genre: 'Thriller',
     title: 'Beyond Any Doubt',
     author: 'Rita Ejikeme',
-    price: '$14.00',
+    price: '$14.25',
     image: '/images/beyond-and-doubtson-of-the-house.png'
   },
   {
@@ -48,30 +48,30 @@ const popularBooksData = [
     genre: 'Sci-Fi / Afrofuturism',
     title: 'Children of Blood and Bone',
     author: 'Tomi Adeyemi',
-    price: '$16.50',
+    price: '$16.99',
     image: '/images/believers.png'
   }
 ];
 
 const weekBooksData = [
   {
-    id: 1,
+    id: 6,
     genre: 'Fantasy',
     title: 'Percy Jackson and the Olympians',
     author: 'Rick Riordan',
-    price: '$11.00',
+    price: '$11.50',
     image: '/images/percy-2.png'
   },
   {
-    id: 2,
+    id: 7,
     genre: 'Fantasy',
     title: 'Harry Potter and the Cursed Child',
     author: 'J.K. Rowling',
-    price: '$22.00',
+    price: '$22.99',
     image: '/images/percy-1.png'
   },
   {
-    id: 3,
+    id: 8,
     genre: 'Graphic Novel',
     title: 'Akiti the Great',
     author: 'Bolaji Olaloye',
@@ -79,19 +79,19 @@ const weekBooksData = [
     image: '/images/heroes.png'
   },
   {
-    id: 4,
+    id: 9,
     genre: 'Business',
     title: 'Think and Grow Rich',
     author: 'Napoleon Hill',
-    price: '$20.00',
+    price: '$20.50',
     image: '/images/think.png'
   },
   {
-    id: 5,
+    id: 10,
     genre: 'Biography',
     title: 'The Path and the Legacy',
     author: 'Babatunde Fashola',
-    price: '$25.00',
+    price: '$25.99',
     image: '/images/babangida.png'
   }
 ];
@@ -130,7 +130,7 @@ export default function SectionTwo() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {popularBooksData.map((book) => (
             <div key={book.id} className="space-y-3 flex flex-col items-center text-center">
-              <Link href="/checkout" className="relative w-full h-56 block hover:shadow-md transition-shadow border border-slate-100 rounded-sm overflow-hidden">
+              <Link href={`/checkout?bookId=${book.id}&title=${encodeURIComponent(book.title)}&price=${encodeURIComponent(book.price)}`} className="relative w-full h-56 block hover:shadow-md transition-shadow border border-slate-100 rounded-sm overflow-hidden">
                 <Image 
                   src={book.image} 
                   alt={book.title} 
@@ -144,7 +144,7 @@ export default function SectionTwo() {
                 <p className="text-[11px] font-semibold text-neutral-400">By {book.author}</p>
                 <p className="text-xs font-black text-neutral-900 pt-1">{book.price}</p>
               </div>
-              <Link href="/checkout" className="w-full">
+              <Link href={`/checkout?bookId=${book.id}&title=${encodeURIComponent(book.title)}&price=${encodeURIComponent(book.price)}`} className="w-full">
                 <button className="w-full border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-colors text-xs font-bold py-2 rounded-sm">
                   Add to cart
                 </button>
@@ -161,7 +161,7 @@ export default function SectionTwo() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {weekBooksData.map((book) => (
             <div key={book.id} className="space-y-3 flex flex-col items-center text-center">
-              <Link href="/checkout" className="relative w-full h-56 block hover:shadow-md transition-shadow border border-slate-100 rounded-sm overflow-hidden">
+              <Link href={`/checkout?bookId=${book.id}&title=${encodeURIComponent(book.title)}&price=${encodeURIComponent(book.price)}`} className="relative w-full h-56 block hover:shadow-md transition-shadow border border-slate-100 rounded-sm overflow-hidden">
                 <Image 
                   src={book.image} 
                   alt={book.title} 
@@ -175,7 +175,7 @@ export default function SectionTwo() {
                 <p className="text-[11px] font-semibold text-neutral-400">By {book.author}</p>
                 <p className="text-xs font-black text-neutral-900 pt-1">{book.price}</p>
               </div>
-              <Link href="/checkout" className="w-full">
+              <Link href={`/checkout?bookId=${book.id}&title=${encodeURIComponent(book.title)}&price=${encodeURIComponent(book.price)}`} className="w-full">
                 <button className="w-full border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white transition-colors text-xs font-bold py-2 rounded-sm">
                   Add to cart
                 </button>
